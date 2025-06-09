@@ -1,12 +1,16 @@
-CC=gcc
-CFLAGS=-static -Wall
+include config.mk
 
-all:
-	$(CC) $(CFLAGS) -o comp1 comp1.c
-check:
-	$(CC) $(CFLAGS) -o comp1 comp1.c
-	./comp1
-	-./comp1 foo
-	rm comp1
+OBJ = comp1.o
+BIN = comp1
+
+all: $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJ)
+
+check: $(BIN)
+	./$(BIN)
+	rm $(BIN) $(OBJ)
+
 clean:
-	rm -f comp1
+	rm -f $(BIN) $(OBJ)
