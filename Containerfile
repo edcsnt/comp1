@@ -11,4 +11,4 @@ RUN <<EOT
 EOT
 FROM scratch
 COPY --from=build comp1 .
-ENTRYPOINT ["./comp1"]
+ENTRYPOINT ["/comp1"]
