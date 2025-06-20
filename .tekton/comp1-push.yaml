@@ -36,7 +36,7 @@ spec:
     - name: show-sbom
       params:
       - name: IMAGE_URL
-        value: $(tasks.build-image-index.results.IMAGE_URL)
+        value: https://quay.io/redhat-user-workloads/rh-ee-edsantos-tenant/comp1
       taskRef:
         params:
         - name: name
@@ -111,10 +111,10 @@ spec:
     results:
     - description: ""
       name: IMAGE_URL
-      value: $(tasks.build-image-index.results.IMAGE_URL)
+      value: https://quay.io/redhat-user-workloads/rh-ee-edsantos-tenant/comp1
     - description: ""
       name: IMAGE_DIGEST
-      value: $(tasks.build-image-index.results.IMAGE_DIGEST)
+      value: c9eb25937925a85228418d0bbcb55868d40b24147694326686147d308f3e4f63
     - description: ""
       name: CHAINS-GIT_URL
       value: $(tasks.clone-repository.results.url)
@@ -297,9 +297,9 @@ spec:
     - name: deprecated-base-image-check
       params:
       - name: IMAGE_URL
-        value: $(tasks.build-image-index.results.IMAGE_URL)
+        value: https://quay.io/redhat-user-workloads/rh-ee-edsantos-tenant/comp1
       - name: IMAGE_DIGEST
-        value: $(tasks.build-image-index.results.IMAGE_DIGEST)
+        value: c9eb25937925a85228418d0bbcb55868d40b24147694326686147d308f3e4f63
       runAfter:
       - build-image-index
       taskRef:
