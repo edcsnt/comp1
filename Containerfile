@@ -9,6 +9,6 @@ RUN <<EOT
   ln -fs cproc /usr/bin/cc
   make
 EOT
-FROM scratch
+FROM docker.io/library/scratch
 COPY --from=build comp1 .
 ENTRYPOINT ["/comp1"]
